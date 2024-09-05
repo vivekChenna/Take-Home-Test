@@ -8,7 +8,7 @@ function Header() {
   const navTabs = ["Home", "About", "Meet us"];
 
   return (
-    <div className=" flex items-center justify-between py-3 sticky top-0 z-30 bg-black">
+    <div className=" flex items-center justify-evenly md:justify-between py-3 sticky top-0 z-30 bg-black px-2 sm:px-0">
       <div className="  items-center gap-5 sm:flex hidden">
         {navTabs.map((tab) => (
           <div className=" text-lg font-semibold" key={tab}>{tab}</div>
