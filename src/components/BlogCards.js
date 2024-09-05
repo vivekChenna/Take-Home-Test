@@ -8,8 +8,12 @@ import Box from "@mui/material/Box";
 export default function BlogCards() {
   const { blogs, error } = useBlogs();
 
-  return !blogs && !error ? (
-    <div className=" min-h-[500px] h-full w-full flex items-center justify-center   ">
+  return error ? (
+    <div className=" min-h-[500px] h-full w-full flex items-center justify-center ">
+      {error}
+    </div>
+  ) : !blogs && !error ? (
+    <div className="min-h-[500px] h-full w-full flex items-center justify-center ">
       <Box sx={{ display: "flex" }}>
         <CircularProgress className=" text-5xl" />
       </Box>

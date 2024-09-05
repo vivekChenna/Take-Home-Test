@@ -1,16 +1,16 @@
+import axios from "axios";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function GET() {
   try {
-    const response = await fetch(
+    const response = await axios.get(
       "https://65b790e246324d531d54efe3.mockapi.io/blogs"
     );
 
-    const data = await response.json();
 
     return NextResponse.json(
       {
-        data,
+        data : response.data,
       },
       {
         status: 200,

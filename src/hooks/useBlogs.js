@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function useBlogs() {
@@ -12,13 +13,13 @@ export default function useBlogs() {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch("/api/blogs", {
+      const response = await axios.get("/api/blogs", {
         method: "GET",
       });
 
-      const data = await response.json();
+     
 
-      setBlogs(data);
+      setBlogs(response.data);
     } catch (error) {
         setError(error.message);
     }
