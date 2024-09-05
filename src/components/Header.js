@@ -11,7 +11,7 @@ function Header() {
     <div className=" flex items-center justify-between py-3 sticky top-0 z-30 bg-black">
       <div className="  items-center gap-5 sm:flex hidden">
         {navTabs.map((tab) => (
-          <div className=" text-lg font-semibold">{tab}</div>
+          <div className=" text-lg font-semibold" key={tab}>{tab}</div>
         ))}
       </div>
       <Link href="/">
